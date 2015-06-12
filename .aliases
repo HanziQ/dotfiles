@@ -165,7 +165,7 @@ gp() {
     FILENAME=$1;
     BASE=`echo "$FILENAME" | cut -d'.' -f1`;
     shift;
-    clang++ -std=c++11 -pedantic -Wall \
+    clang++ -std=c++14 -pedantic -Wall \
     -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
     -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
     -Wbad-function-cast -Wstrict-overflow=5 -Wstrict-prototypes -Winline \
@@ -178,7 +178,7 @@ gpd() {
 FILENAME=$1;
     BASE=`echo "$FILENAME" | cut -d'.' -f1`;
     shift;
-    clang++ -std=c++11 -fsanitize=address -g -O0 -fno-omit-frame-pointer -std=c++11 -pedantic -Wall \
+    clang++ -std=c++14 -fsanitize=address -g -O0 -fno-omit-frame-pointer -pedantic -Wall \
     -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
     -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
     -Wstrict-overflow=5 -Winline \
@@ -201,3 +201,11 @@ alias nginx.logs.default.access='tail -250f /usr/local/etc/nginx/logs/default.ac
 alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/default-ssl.access.log'
 alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
+
+
+alias fa="make && lldb -or ./bin/debug/factorio"
+alias fad="make dist && lldb -or ./bin/debug/factorio"
+alias fak="pkill -9 factorio"
+
+alias tma='tmux attach -d -t'
+alias tmn='tmux new -s $(basename $(pwd))'
