@@ -23,3 +23,11 @@ export GREP_OPTIONS="--color=auto";
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+
+
+export ASAN_OPTIONS="symbolize=1"
+
+export LLDB_DEBUGSERVER_PATH="`which debugserver`"
+
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color

@@ -11,6 +11,7 @@ alias dr="cd ~/Dropbox"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias t="cd /tmp"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -137,6 +138,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
 alias g='git'
+alias gs='g s'
 
 # Short of learning how to actually configure OSX, here's a hacky way to use
 # GNU manpages for programs that are GNU ones, and fallback to OSX manpages otherwise
@@ -204,6 +206,7 @@ alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyad
 
 
 alias fa="make && lldb -or ./bin/debug/factorio"
+alias fab="make && lldb ./bin/debug/factorio"
 alias fad="make dist && lldb -or ./bin/debug/factorio"
 alias fak="pkill -9 factorio"
 
